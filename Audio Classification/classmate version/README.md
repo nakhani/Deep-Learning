@@ -67,7 +67,8 @@ A **1D Convolutional Neural Network (CNN)** with the following layers:
 
 ### **Metrics During Training**
 - The accuracy and loss are plotted for training and validation sets.
-  <img src="Accuracy.png" width = "250"><img src="Loss.png" width = "250">
+  <img src="Accuracy.png" width = "250">
+  <img src="Loss.png" width = "250">
 - Metrics for the final epoch are printed, including:
 
  | Epoch | Train Accuracy | Validation Accuracy | Train Loss | Validation Loss |
