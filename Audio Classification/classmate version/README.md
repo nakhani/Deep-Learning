@@ -68,7 +68,7 @@ A **1D Convolutional Neural Network (CNN)** with the following layers:
 ### **Metrics During Training**
 - The accuracy and loss are plotted for training and validation sets.
   <img src="Accuracy.png" width = "250">
-  
+
   <img src="Loss.png" width = "250">
 - Metrics for the final epoch are printed, including:
 
@@ -99,26 +99,28 @@ A custom function is provided to make predictions on new audio files.
 audio_path = "example_audio.wav"  # Path to the audio file
 predicted_class = predict_audio(audio_path)
 print(f"Predicted class: {predicted_class}")
+```
 
 ## How to Run the Code
 1. Clone the repository:
 
-   ```
-        https://github.com/nakhani/Deep-Learning/tree/36cbf0bfdde41f52ad7e280daeb066b274f1d2a1/Audio%20Classification/classmate%20version
-   ```
+```
+https://github.com/nakhani/Deep-Learning/tree/36cbf0bfdde41f52ad7e280daeb066b274f1d2a1/Audio%20Classification/classmate%20version
+
+```
 
 2. Navigate to the directory:
-   ```sh
+
+```
    Introduction to classmate version
-   ```
+```
 
 4. Run the assignments:
   
-   ```sh
-    jupyter notebook preprocessing.ipynb  # For preprocessing the audio files
-    jupyter notebook model.ipynb          # For training the audio classification model
-
-   ```
+```
+jupyter notebook preprocessing.ipynb  # For preprocessing the audio files
+jupyter notebook model.ipynb          # For training the audio classification model
+```
 
 ## Technologies Used
 - Python 3
