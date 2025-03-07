@@ -107,8 +107,7 @@ print(f"Predicted class: {predicted_class}")
 1. Clone the repository:
 
 ```
-https://github.com/nakhani/Deep-Learning/tree/36cbf0bfdde41f52ad7e280daeb066b274f1d2a1/Audio%20Classification/classmate%20version
-
+https://github.com/nakhani/Deep-Learning/tree/5bfde3078d81c13af5719e664e9d8d5f7a161696/Audio%20Classification/classmate%20version
 ```
 
 2. Navigate to the directory:
@@ -122,6 +121,8 @@ https://github.com/nakhani/Deep-Learning/tree/36cbf0bfdde41f52ad7e280daeb066b274
 ```
 jupyter notebook preprocessing.ipynb  # For preprocessing the audio files
 jupyter notebook model.ipynb          # For training the audio classification model
+jupyter notebook telebot.ipynb          # For running telegram bot
+
 ```
 
 ## Technologies Used
