@@ -83,7 +83,7 @@ A **1D Convolutional Neural Network (CNN)** with the following layers:
 ### **Confusion Matrix**
 A confusion matrix is generated for the validation set to visualize class predictions.
 
-  <img src="confusion matrix.png" width = "250">
+  <img src="confusion matrix.png" width = "300">
 
 ---
 
