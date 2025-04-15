@@ -24,7 +24,7 @@ The preprocessing step involves converting images into feature vectors using the
 
 - The dataset is saved as a CSV file (combined_dataset.csv).
 
-## Train Model using MLP
+## Train Model Using MLP
 
 ### Dataset
 - The dataset contains feature vectors extracted using the DeepFace library with the ArcFace model.
@@ -41,17 +41,16 @@ The preprocessing step involves converting images into feature vectors using the
 ---
 
 
-## 3. Model Evaluation
+## Model Evaluation
 
-### **Metrics During Training**
-- The accuracy and loss are plotted for training and validation sets.
+- The accuracy and loss are plotted for training and validation sets:
 
   <img src="outputs/output1.png" width = "400">
 
   <img src="outputs/output2.png" width = "400">
 
 
-- Metrics for the final epoch are printed, including:
+- Evaluated Table:
 
   | Metric              | Value        |
   |----------------------|--------------|
@@ -67,7 +66,7 @@ The preprocessing step involves converting images into feature vectors using the
 
 To ensure compatibility between **TensorFlow** and the **DeepFace** library during the prediction phase, it is critical to use the specified versions of these libraries. Failing to install the correct versions may result in synchronization issues or runtime errors.
 
-### Setup Instructions
+### Setup Instructions:
 
 Run the following commands to set up the necessary library versions:
 
@@ -85,24 +84,29 @@ Run the following commands to set up the necessary library versions:
 ## How to Run the Code
 1. Clone the repository:
 
-```
-https://github.com/nakhani/Deep-Learning/tree/5bfde3078d81c13af5719e664e9d8d5f7a161696/Audio%20Classification/classmate%20version
-```
+   ```
+   https://github.com/nakhani/Deep-Learning/tree/cae1786a1cf596db0fddf738a728c07e9f306f32/Face%20recognition
+   ```
 
 2. Navigate to the directory:
 
-```
+   ```
    Face recognition
-```
+   ```
 
-4. Run the assignments:
+3. Install the required packages:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+4. Run the project:
   
-```
-jupyter notebook convert_dataset.ipynb  # For preprocessing the persian actor dataset
-jupyter notebook persian_actor.ipynb    # For training model and predict a new actor
+   ```
+   jupyter notebook convert_dataset.ipynb  # For preprocessing the persian actor dataset
+   jupyter notebook persian_actor.ipynb    # For training model and predict a new actor
+   ```
 
-```
-
+---
 ## Technologies Used
 - Python 3
 - TensorFlow/Keras
