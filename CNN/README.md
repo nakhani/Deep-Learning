@@ -1,83 +1,56 @@
-# Facial Recognition Using MLP Neural Network
+# Accuracy Comparison: MLP vs CNN+MLP
 
-This project uses a Multi-Layer Perceptron (MLP) neural network to classify images from the PersianFace dataset. 
+This repository compares several datasets using two approaches:
+1. **MLP (Machine Learning)** 
+2. **CNN + MLP (Deep Learning)** 
 
----
+## Accuracy Table
 
-## Preprocessing Data
-The preprocessing step involves converting images into feature vectors using the DeepFace library with the ArcFace model. This step is crucial for preparing the dataset for training a neural network.
+| **Dataset**       | **MLP (Machine Learning)** 😭 | **CNN + MLP (Deep Learning)** 😍 |
+|--------------------|-------------------------------|----------------------------------|
+| **MNIST**         | 97%                           | **98%**                         |
+| **Fashion MNIST** | 87%                           | **90%**                         |
+| **CIFAR-10**      | 36%                           | **70%**                         |
+| **CIFAR-100**     | 15%                           | **49%**                         |
 
-### Explanation
-#### **Input Folder:**
+## Datasets Overview
 
-- The input_folder contains subfolders, each representing a label (e.g., actor names).
-
-- Each subfolder contains images of the corresponding label.
-
-#### **Feature Extraction:**
-
-- The DeepFace.represent function extracts feature vectors (embeddings) from images using the ArcFace model.
-
-#### **Dataset Creation:**
-
-- The extracted features are combined with labels and file names to create a structured dataset.
-
-- The dataset is saved as a CSV file (combined_dataset.csv).
-
-## Train Model Using MLP
-
-### Dataset
-- The dataset contains feature vectors extracted using the DeepFace library with the ArcFace model.
-- Split: 70% training, 15% validation, 15% test.
-
-### Model
-- **Architecture**:
-  - Input layer: Accepts feature vectors.
-  - Hidden layers: Dense layers with ReLU activation and dropout for regularization.
-  - Output layer: Softmax for multi-class classification.
-- **Optimizer**: Adam.
-- **Loss function**: Sparse Categorical Crossentropy.
-- **Metrics**: Accuracy.
----
-
-
-## Model Evaluation
-
-- The accuracy and loss are plotted for training and validation sets:
-
-  <img src="outputs/output1.png" width = "400">
-
-  <img src="outputs/output2.png" width = "400">
-
-
-- Evaluated Table:
-
-  | Metric              | Value        |
-  |----------------------|--------------|
-  | Training Accuracy    | **0.93** |
-  | Validation Accuracy  | **0.90** |
-  | Test Accuracy        | **0.90** |
-  | Test Loss            | **0.42** |
- 
+### 1. **MNIST** 🖊️
+- **Description**: A dataset containing **70,000 grayscale images** of handwritten digits (0-9), with 60,000 for training and 10,000 for testing.
+- **Image Size**: **28x28 pixels**, representing a single digit in the center.
+- **Purpose**: Ideal for testing basic machine learning and deep learning models.
+- **Complexity**: Simple, as the data is clean and has no background noise.
 
 ---
 
-# Important Notice for Prediction ⚠️
+### 2. **Fashion MNIST** 👗👞
+- **Description**: A modern dataset with **70,000 grayscale images** of fashion items (clothing, shoes, bags, etc.), including 60,000 for training and 10,000 for testing.
+- **Image Size**: **28x28 pixels**, where each image represents one of 10 categories like T-shirts, trousers, or sneakers.
+- **Purpose**: Provides a slightly more challenging benchmark than MNIST.
+- **Complexity**: Moderate, with overlapping visual similarities between some classes.
 
-To ensure compatibility between **TensorFlow** and the **DeepFace** library during the prediction phase, it is critical to use the specified versions of these libraries. Failing to install the correct versions may result in synchronization issues or runtime errors.
+---
 
-### Setup Instructions:
+### 3. **CIFAR-10** 🖼️
+- **Description**: A dataset of **60,000 color images** categorized into 10 classes such as airplanes, cars, cats, and dogs. Divided into 50,000 for training and 10,000 for testing.
+- **Image Size**: **32x32 pixels**, with 3 color channels (RGB).
+- **Purpose**: Great for testing image recognition models on low-resolution real-world images.
+- **Complexity**: Challenging, due to diverse classes and background noise.
 
-Run the following commands to set up the necessary library versions:
+---
 
-```bash
-!pip install --upgrade deepface
-!pip install tensorflow==2.12.0
-```
+### 4. **CIFAR-100** 🌍
+- **Description**: An extension of CIFAR-10 with **60,000 color images** spread across **100 fine-grained classes**, such as "flowers," "vehicles," and "reptiles." Each class has 500 training images and 100 testing images.
+- **Image Size**: **32x32 pixels**, with 3 color channels (RGB).
+- **Purpose**: Introduced for fine-grained classification tasks requiring better feature extraction.
+- **Complexity**: Significantly harder than CIFAR-10 due to the increased number of classes.
 
-### Default Setup Requirements:
-- DeepFace: Latest version (install/upgrade as shown above).
-- TensorFlow: Version 2.12.0 (other versions might cause compatibility issues).
+---
+
+## Summary
+- Deep Learning (CNN + MLP) outperforms traditional MLP across all datasets, especially for complex datasets like CIFAR-10 and CIFAR-100.
+- This demonstrates the strength of CNNs in learning hierarchical features and handling visual complexities.
+
 
 ---
 
@@ -91,7 +64,7 @@ Run the following commands to set up the necessary library versions:
 2. Navigate to the directory:
 
    ```
-   Face recognition
+   CNN
    ```
 
 3. Install the required packages:
@@ -102,8 +75,14 @@ Run the following commands to set up the necessary library versions:
 4. Run the project:
   
    ```
-   jupyter notebook convert_dataset.ipynb  # For preprocessing the persian actor dataset
-   jupyter notebook persian_actor.ipynb    # For training model and predict a new actor
+   jupyter notebook cifar10_cnn+mlp.ipynb  # For training Cifar10 Dataset model with CNN + MLP
+   jupyter notebook cifar10_MLP.ipynb    # For training Cifar10 Dataset model with MLP
+   jupyter notebook cifar100_cnn+mlp.ipynb    # For training Cifar100 Dataset model with CNN + MLP
+   jupyter notebook cifar100_MLP.ipynb    # For training Cifar100 Dataset model with MLP
+   jupyter notebook fashion_mnist_cnn+mlp.ipynb    # For training Fashion Mnist Dataset model with CNN + MLP
+   jupyter notebook fashion_mnist_MLP.ipynb    # For training Fashion Mnist Dataset model with MLP
+   jupyter notebook mnist_cnn+mlp.ipynb    # For training Mnist Dataset model with CNN + MLP
+   jupyter notebook Mnist_MLP.ipynb    # For training Mnist Dataset model with MLP
    ```
 
 ---
