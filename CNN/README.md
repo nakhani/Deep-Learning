@@ -58,7 +58,7 @@ This repository compares several datasets using two approaches:
 1. Clone the repository:
 
    ```
-   https://github.com/nakhani/Deep-Learning/tree/cae1786a1cf596db0fddf738a728c07e9f306f32/Face%20recognition
+   https://github.com/nakhani/Deep-Learning/tree/09d38bc854e98f314a0a8cd6593ae106e93a88d3/CNN
    ```
 
 2. Navigate to the directory:
