@@ -74,40 +74,43 @@ The goal of this project is to classify images from the **17Flowers** dataset. A
 
   | **Layer (type)**      | **Output Shape**     | **Param #**    |
   |-----------------------|----------------------|----------------|
-  | conv2d (Conv2D)       | (None, 222, 222, 32)| 896            |
-  | conv2d_1 (Conv2D)     | (None, 220, 220, 64)| 18,496         |
-  | max_pooling2d         | (None, 110, 110, 64)| 0              |
-  | flatten (Flatten)     | (None, 774400)      | 0              |
-  | dense (Dense)         | (None, 128)         | 99,123,328     |
+  | conv2d (Conv2D)       | (None, 224, 224, 32)| 896            |
+  | max_pooling2d (MaxPooling2D)       | (None, 112, 112, 32)| 0        |
+  | conv2d_1 (Conv2D)        | (None, 112, 112, 64)| 18,496              |
+  | max_pooling2d_1 (MaxPooling2D) | (None, 56, 56, 64)| 0          |
+  | conv2d_2 (Conv2D) | (None, 56, 56, 128)  | 73,856     |
+  | max_pooling2d_2 (MaxPooling2D) | (None, 28, 28, 128)  | 0   |
+  | flatten (Flatten)     | (None, 100352)      | 0              |
+  | dense (Dense)         | (None, 128)         | 12,845,184      |
   | dropout (Dropout)     | (None, 128)         | 0              |
-  | dense_1 (Dense)       | (None, 5)           | 645            |
+  | dense_1 (Dense)       | (None, 17)           | 2,193             |
 
-- **Total params**: 99,143,365 (378.20 MB)  
-- **Trainable params**: 99,143,365 (378.20 MB)  
+- **Total params**: 38,821,877 (148.09 MB) 
+- **Trainable params**: 12,940,625 (49.36 MB)  
 - **Non-trainable params**: 0 (0.00 B)
 
 3. **Evaluation**: 
 - **Confusion Matrix**:
 Visualize the **confusion matrix** to assess model performance and identify classification results. The confusion matrix helps to understand where misclassifications occur and how well the model predicts each class.
 
-   <img src= "5_animals/output3.png" width = "400" >
+   <img src= "17_flowers/output3.png" width = "400" >
 
 - **Train and Validation Plots**:
 Analyze the training process through plots of:
 - **Loss**: Track the training and validation loss across epochs to identify convergence and overfitting issues.
 
-    <img src= "5_animals/output3.png" width = "400" >
+    <img src= "17_flowers/output.png" width = "400" >
 
 - **Accuracy**: Visualize training and validation accuracy over epochs to measure the model's performance and generalization.
 
-   <img src= "5_animals/output3.png" width = "400" >
+   <img src= "17_flowers/output1.png" width = "400" >
 
 - **Evaluation Table**:
 
-  | **Metric**       | **Training** | **Validation** |
-  |-------------------|--------------|----------------|
-  | **Accuracy**      | 90.15%       | 63.74%         |
-  | **Loss**          | 0.2688       | 1.1628         |
+  | **Metric**       | **Training** | **Validation** | **Test** |
+  |-------------------|--------------|----------------|---------|
+  | **Accuracy**      | 73.66%       | 59.39%         | 62.64%  |
+  | **Loss**          | 0.8033       | 1.2250         | 1.221   |
 
   These evaluation metrics provide a detailed view of the model's overall performance during training and validation phases.
 
@@ -128,7 +131,7 @@ Analyze the training process through plots of:
 1. Clone the repository:
 
    ```
-   https://github.com/nakhani/Deep-Learning/tree/09d38bc854e98f314a0a8cd6593ae106e93a88d3/CNN
+   https://github.com/nakhani/Deep-Learning/tree/ff95d883b60e85e4b5e56b699110983c5d4882e4/CNN_2
    ```
 
 2. Navigate to the directory:
