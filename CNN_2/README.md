@@ -122,7 +122,8 @@ Analyze the training process through plots of:
 5. **Telegram Bot Integration**:
    - Connect the trained model to a Telegram bot for inference. Users can send an image, and the bot will classify it into one of the 17 flower categories.
 
-    <img src= "5_animals/output3.png" width = "400" >
+
+      <img src= "17_flowers/telegram.png" width = "400" >
 
 
 ---
