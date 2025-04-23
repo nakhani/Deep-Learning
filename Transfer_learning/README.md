@@ -252,7 +252,7 @@ Analyze the training process through plots of:
 1. Clone the repository:
 
    ```
-   https://github.com/nakhani/Deep-Learning/tree/ff95d883b60e85e4b5e56b699110983c5d4882e4/CNN_2
+   https://github.com/nakhani/Deep-Learning/tree/beabe5eb9b9aa9e21072388cb9bb44425be7fde6/Transfer_learning
    ```
 
 2. Navigate to the directory:
