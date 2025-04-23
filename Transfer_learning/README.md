@@ -269,10 +269,10 @@ Analyze the training process through plots of:
 4. Run the project:
   
    ```
-   jupyter notebook 5animals.ipynb  # For training 5 Animals Dataset model and predict a new animal with MobilenetV2 
-   jupyter notebook 17flowers.ipynb    # For training 17 Flowers Dataset model and predict a new flower with MobilenetV2 
-   jupyter notebook 7_7_face.ipynb  # For training 7_7 Face Dataset model and predict a new face with MobilenetV2 
-   jupyter notebook akhund_human.ipynb    # For training Akhund and Human Dataset model and predict a new person flower with MobilenetV2 
+   jupyter notebook 5animals.ipynb  # For training 5 Animals Dataset model and predict a new animal with MobileNetV2 
+   jupyter notebook 17flowers.ipynb    # For training 17 Flowers Dataset model and predict a new flower with MobileNetV2 
+   jupyter notebook 7_7_face.ipynb  # For training 7_7 Face Dataset model and predict a new face with MobileNetV2 
+   jupyter notebook akhund_human.ipynb    # For training Akhund and Human Dataset model and predict a new person flower with MobileNetV2 
    ```
    
 ---
