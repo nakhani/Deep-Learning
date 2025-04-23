@@ -237,7 +237,12 @@ Analyze the training process through plots of:
    - Predict its class.
    - Print the corresponding animal.
 
-5. **Telegram Bot Integration**:
+5. **WandB Integration**:  
+   - The training process is connected to **Weights & Biases (WandB)** for tracking and evaluation.
+     
+     <img src= "Akhund_Human/Untitled.png" width = "400" >
+
+6. **Telegram Bot Integration**:
    - Connect the trained model to a Telegram bot for inference. Users can send an image, and the bot will classify it into one of the 2 class categories.
 
 
