@@ -1,130 +1,100 @@
-# Deep Learning and Image Classification
+# Deep Learning and Regression Tasks
 
-This repository contains two projects focusing on deep learning and image classification using Python:
-1. **5 Animals Classification**: Train a CNN on a custom dataset to classify animals and produce fun emoji-based predictions.
-2. **17 Flowers Classification**: Train and evaluate a CNN on flower species, including data augmentation and integration with a Telegram bot.
+This repository contains two deep learning projects using **TensorFlow/Keras**:
+
+1. **Age Prediction** 👶🏻👵🏻: Train a CNN-based regression model on the **UTKFace dataset** to predict a person's age from facial images.
+2. **Home Price Prediction** 🏠💰: Train a CNN-based regression model using multiple house images to predict home prices.
 
 
-## Project 1: 5 Animals Classification
+## Project 1: Age Prediction 👶🏻👵🏻
 
-The goal of this project is to classify images from the **5 Animals** dataset. A Convolutional Neural Network (CNN) is trained to achieve high accuracy, and inference produces the name of corresponding to the animal classes.
+The goal of this project is to predict the **age** of a person using the **UTKFace dataset**, which contains **23,000 aligned facial images** with age labels.
 
 ### Steps
-1. **Dataset**: The dataset contains 1,314 images organized into 5 folders, each corresponding to a specific animal category: `cat, dog, elephant, panda, and giraffe`. These images are carefully curated to ensure diversity within each class, making the dataset suitable for machine learning tasks such as classification, image recognition, or transfer learning.
-2. **Model Training**: Trained a CNN using `TensorFlow/Keras` with a sequential architecture to classify images into five animal categories (cat, dog, elephant, panda, and giraffe). Below is the summary of the model:
+1. **Dataset Preparation**: 
+- Download the UTKFace dataset from **Kaggle**.
+- Load and analyze the **23,000 images**, removing corrupted or unnecessary samples.
 
-- **Model**: "sequential"
+2. **Data Augmentation**: 
+- Apply **horizontal flipping** to improve model generalization.
 
-  | **Layer (type)**      | **Output Shape**     | **Param #**    |
-  |-----------------------|----------------------|----------------|
-  | conv2d (Conv2D)       | (None, 222, 222, 32)| 896            |
-  | conv2d_1 (Conv2D)     | (None, 220, 220, 64)| 18,496         |
-  | max_pooling2d         | (None, 110, 110, 64)| 0              |
-  | flatten (Flatten)     | (None, 774400)      | 0              |
-  | dense (Dense)         | (None, 128)         | 99,123,328     |
-  | dropout (Dropout)     | (None, 128)         | 0              |
-  | dense_1 (Dense)       | (None, 5)           | 645            |
+3. **Model Training**: 
+- Utilize **Transfer Learning** with a pretrained **CNN** (**ResNet50**).
+- **Freeze layers** to retain pre-learned features.
+- Add **Dropout layers** to prevent overfitting.
+- Train the model using **Mean Absolute Error (MAE)** as the loss function.
 
-- **Total params**: 99,143,365 (378.20 MB)  
-- **Trainable params**: 99,143,365 (378.20 MB)  
-- **Non-trainable params**: 0 (0.00 B)
 
-3. **Evaluation**: 
-- **Confusion Matrix**:
-Visualize the **confusion matrix** to assess model performance and identify classification results. The confusion matrix helps to understand where misclassifications occur and how well the model predicts each class.
+4. **Evaluation**: 
+- **Loss Curve Analysis**: Track **MAE** during training.
+   
+     <img src= "Age_Prediction/download (3).png" width = "400" >
 
-   <img src= "5_animals/output3.png" width = "400" >
-
-- **Train and Validation Plots**:
-Analyze the training process through plots of:
-- **Loss**: Track the training and validation loss across epochs to identify convergence and overfitting issues.
-
-   <img src= "5_animals/output.png" width = "400" >
-
-- **Accuracy**: Visualize training and validation accuracy over epochs to measure the model's performance and generalization.
-
-    <img src= "5_animals/output2.png" width = "400" >
+- **Sample Inference**: Predict ages on test images.
 
 - **Evaluation Table**:
 
-  | **Metric**       | **Training** | **Validation** |
-  |-------------------|--------------|----------------|
-  | **Accuracy**      | 90.15%       | 63.74%         |
-  | **Loss**          | 0.2688       | 1.1628         |
+     | **Metric**       | **Training** | **Validation** |
+     |-------------------|--------------|----------------|
+     | **Loss**          | 0.1979       | 0.1952        |
 
-  These evaluation metrics provide a detailed view of the model's overall performance during training and validation phases.
+     These evaluation metrics provide a detailed view of the model's overall performance during training and validation phases.
 
-4. **Inference**:
-   - Read an image.
-   - Predict its class.
-   - Print the corresponding animal.
+5. **WandB Integration**:  
+- The training process is connected to **Weights & Biases (WandB)** for tracking and evaluation.
+     
+     <img src= "Age_Prediction/Untitled.png" width = "500" >
+
+6. **Inference**:
+- Load a **person’s face image**.
+- Preprocess the image.
+- Pass it through the trained model to predict age.
 
 ---
 
-## Project 2: 17 Flowers Classification
+## Project 2: Home Prices Prediction 🏠💰
 
-The goal of this project is to classify images from the **17Flowers** dataset. A Convolutional Neural Network (CNN) is trained to achieve high accuracy, augmented to improve performance, and connected to a Telegram bot for inference.
+This project builds a deep learning regression model using **multiple images per home** to estimate property prices.
 
 ### Steps
-1. **Dataset**: The dataset consists of 17 classes of flowers, with a total of 1020 training images and 340 test images. Each class represents a unique flower type, including: `bluebell, buttercup, coltsfoot, cowslip, crocus, daffodil, daisy, dandelion, fritillary, iris, lilyvalley, pansy, snowdrop, sunflower, tigerlily, tulip, windflower`. These images are carefully organized and balanced across all classes, ensuring diversity and reliability for machine learning tasks such as classification, image recognition, or transfer learning.
+1. **Dataset Preparation**: 
+- Use the dataset structure from **PyImageSearch** to process home images.
+- Each home consists of **4 images**:
+  - **Bedroom**
+  - **Frontal View**
+  - **Kitchen**
+  - **Living Room**
+- Labels correspond to **property prices**.
 
-2. **Model Training**: Trained a CNN using `TensorFlow/Keras` with a sequential architecture to classify images into five animal categories (bluebell, buttercup, coltsfoot, cowslip, crocus, daffodil, daisy, dandelion, fritillary, iris, lilyvalley, pansy, snowdrop, sunflower, tigerlily, tulip, windflower). Below is the summary of the model:
 
-- **Model**: "sequential"
+2. **Model Architecture**: 
 
-  | **Layer (type)**      | **Output Shape**     | **Param #**    |
-  |-----------------------|----------------------|----------------|
-  | conv2d (Conv2D)       | (None, 224, 224, 32)| 896            |
-  | max_pooling2d (MaxPooling2D)       | (None, 112, 112, 32)| 0        |
-  | conv2d_1 (Conv2D)        | (None, 112, 112, 64)| 18,496              |
-  | max_pooling2d_1 (MaxPooling2D) | (None, 56, 56, 64)| 0          |
-  | conv2d_2 (Conv2D) | (None, 56, 56, 128)  | 73,856     |
-  | max_pooling2d_2 (MaxPooling2D) | (None, 28, 28, 128)  | 0   |
-  | flatten (Flatten)     | (None, 100352)      | 0              |
-  | dense (Dense)         | (None, 128)         | 12,845,184      |
-  | dropout (Dropout)     | (None, 128)         | 0              |
-  | dense_1 (Dense)       | (None, 17)           | 2,193             |
+- Use **EfficientNet** for feature extraction.
+- Process each image **independently** before merging representations.
+- Fully connected layers output the **predicted price**.
 
-- **Total params**: 38,821,877 (148.09 MB) 
-- **Trainable params**: 12,940,625 (49.36 MB)  
-- **Non-trainable params**: 0 (0.00 B)
+3. **Training**:
 
-3. **Evaluation**: 
-- **Confusion Matrix**:
-Visualize the **confusion matrix** to assess model performance and identify classification results. The confusion matrix helps to understand where misclassifications occur and how well the model predicts each class.
+- Use **Mean Absolute Error (MAE)** as the loss function.
+- Apply **Dropout layers** for regularization.
+- Fine-tune learning rates for better accuracy.
 
-   <img src= "17_flowers/output3.png" width = "400" >
+4. **Evaluation**: 
+- Generate a **loss** curve.
+   <img src= "House_Price_Prediction/download.png" width = "400" >
 
-- **Train and Validation Plots**:
-Analyze the training process through plots of:
-- **Loss**: Track the training and validation loss across epochs to identify convergence and overfitting issues.
-
-    <img src= "17_flowers/output.png" width = "400" >
-
-- **Accuracy**: Visualize training and validation accuracy over epochs to measure the model's performance and generalization.
-
-   <img src= "17_flowers/output1.png" width = "400" >
-
+- Perform inference with test images.
 - **Evaluation Table**:
 
-  | **Metric**       | **Training** | **Validation** | **Test** |
-  |-------------------|--------------|----------------|---------|
-  | **Accuracy**      | 73.66%       | 59.39%         | 62.64%  |
-  | **Loss**          | 0.8033       | 1.2250         | 1.221   |
+  | **Metric**       | **Training** | **Validation** | 
+  |-------------------|--------------|----------------|
+  | **Loss**          | 330264.1875       | 270031.0625         | 
 
   These evaluation metrics provide a detailed view of the model's overall performance during training and validation phases.
 
 4. **Inference**:
-   - Read an image.
-   - Predict its class.
-   - Print the corresponding animal.
-
-5. **Telegram Bot Integration**:
-   - Connect the trained model to a Telegram bot for inference. Users can send an image, and the bot will classify it into one of the 17 flower categories.
-
-
-      <img src= "17_flowers/telegram.png" width = "400" >
-
+- Provide **4 images** of a home to the trained model.
+- Predict and display the estimated house price.
 
 ---
 
@@ -138,7 +108,7 @@ Analyze the training process through plots of:
 2. Navigate to the directory:
 
    ```
-   CNN_2
+   CNN_Regression
    ```
 
 3. Install the required packages:
@@ -149,8 +119,8 @@ Analyze the training process through plots of:
 4. Run the project:
   
    ```
-   jupyter notebook 5animals.ipynb  # For training 5 Animals Dataset model and predict a new animal with CNN + MLP
-   jupyter notebook 17flowers.ipynb    # For training 17 Flowers Dataset model and predict a new flower with CNN + MLP
+   jupyter notebook age_prediction.ipynb  # For training UTKFace Dataset model and predict an person's age with Transfer Learning and CNN Regression
+   jupyter notebook house_price_prediction.ipynb    # For training Houses Info Dataset model and predict a new house's price flower with Transfer Learning and CNN Regression
    ```
    
 ---
@@ -161,3 +131,4 @@ Analyze the training process through plots of:
 - Pandas
 - Matplotlib
 - scikit-learn
+- Weights & Biases (wandb) for logging
