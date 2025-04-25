@@ -1,10 +1,11 @@
-# Deep Learning and Regression Tasks
+# Deep Learning and Regression 
 
 This repository contains two deep learning projects using **TensorFlow/Keras**:
 
 1. **Age Prediction** 👶🏻👵🏻: Train a CNN-based regression model on the **UTKFace dataset** to predict a person's age from facial images.
 2. **Home Price Prediction** 🏠💰: Train a CNN-based regression model using multiple house images to predict home prices.
 
+---
 
 ## Project 1: Age Prediction 👶🏻👵🏻
 
@@ -69,7 +70,7 @@ This project builds a deep learning regression model using **multiple images per
 
 2. **Model Architecture**: 
 
-- Use **EfficientNet** for feature extraction.
+- Use **EfficientNetB0** for feature extraction.
 - Process each image **independently** before merging representations.
 - Fully connected layers output the **predicted price**.
 
@@ -81,6 +82,7 @@ This project builds a deep learning regression model using **multiple images per
 
 4. **Evaluation**: 
 - Generate a **loss** curve.
+
    <img src= "House_Price_Prediction/download.png" width = "400" >
 
 - Perform inference with test images.
@@ -102,7 +104,7 @@ This project builds a deep learning regression model using **multiple images per
 1. Clone the repository:
 
    ```
-   https://github.com/nakhani/Deep-Learning/tree/ff95d883b60e85e4b5e56b699110983c5d4882e4/CNN_2
+   https://github.com/nakhani/Deep-Learning/tree/d207f0d7c03b5aae34a04a8b97d09192f120afc1/CNN_Regression
    ```
 
 2. Navigate to the directory:
