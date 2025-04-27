@@ -54,7 +54,7 @@ This project implements **YOLOv8** to **detect and crop Persian license plates**
    Object_Detection
    ```
 
-3. Install the required packages:
+3. Instal the required packages:
    ```sh
    pip install -r requirements.txt
    ```
