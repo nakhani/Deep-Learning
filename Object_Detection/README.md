@@ -1,6 +1,6 @@
 # 🚘 Persian License Plate Recognition Using YOLOv8
 
-##  Project Overview
+## 📌 Project Overview
 This project implements **YOLOv8** to **detect and crop Persian license plates** from images. It uses **Roboflow** for dataset management, **Ultralytics YOLOv8** for training, and **OpenCV** for image processing.
 
 ---
