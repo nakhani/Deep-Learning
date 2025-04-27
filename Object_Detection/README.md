@@ -45,7 +45,7 @@ This project implements **YOLOv8** to **detect and crop Persian license plates**
 1. Clone the repository:
 
    ```
-   https://github.com/nakhani/Deep-Learning/tree/beabe5eb9b9aa9e21072388cb9bb44425be7fde6/Transfer_learning
+   https://github.com/nakhani/Deep-Learning/tree/1b3cd18c66cd0a9819b0adcd93cc19f456dfca5b/Object_Detection
    ```
 
 2. Navigate to the directory:
@@ -69,8 +69,8 @@ This project implements **YOLOv8** to **detect and crop Persian license plates**
 ---
 ## Technologies Used
 - Python 3
-- TensorFlow/Keras
+- Ultralytics
 - NumPy
-- Pandas
+- Roboflow
 - Matplotlib
-- scikit-learn
+
