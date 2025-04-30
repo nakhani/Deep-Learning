@@ -186,7 +186,7 @@ Use the following mapping for **YOLO-detected license plate annotation** in **DT
 1. Clone the repository:
 
    ```
-   https://github.com/nakhani/Deep-Learning/tree/1b3cd18c66cd0a9819b0adcd93cc19f456dfca5b/Object_Detection
+   https://github.com/nakhani/Deep-Learning/tree/74320f3c90196359fc87da72e45b82cfac1a7d66/easyOCR_DTRB
    ```
 
 2. Navigate to the directory:
