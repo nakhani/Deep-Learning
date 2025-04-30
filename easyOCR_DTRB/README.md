@@ -144,7 +144,7 @@ Use the following mapping for **YOLO-detected license plate annotation** in **DT
 
 - **DTRB Model Performance**
 
-  | Iteration | Loss Train  | Loss Validation |
+  | Iteration |  Train Loss |  Validation Loss |
   |-------------|------------|-------------|
   | 1 | 3.65 | 3.52 |
   | 500 | 1.82 | 0.42 |
